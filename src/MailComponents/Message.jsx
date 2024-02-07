@@ -5,7 +5,7 @@ import Modal from "@mui/material/Modal";
 import { Button, TextField } from "@mui/material";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import useSentMailToFirebase from "../customHook/sentDataToFirebase";
 
 const style = {
@@ -28,14 +28,15 @@ export default function Message() {
   const toRef = React.useRef(null);
   const subjectRef = React.useRef(null);
   const quillRef = React.useRef(null);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const sentData = useSentMailToFirebase(); // Use the custom hook
 
   const inbox = () => {
     // Access values using refs
     const to = toRef.current.value;
     const subject = subjectRef.current.value;
-    const msg = quillRef.current.editor.getText(); // Use getText() to get the message content
+    // const msg = quillRef.current.editor.getText(); // Use getText() to get the message content
+    const msg = quillRef.current.value;
 
     if (msg.trim() === "") {
       alert("Please enter some content in the editor.");

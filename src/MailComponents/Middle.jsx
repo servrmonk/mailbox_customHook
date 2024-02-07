@@ -116,13 +116,18 @@ export default function Middle() {
                 ></span>
               </NavLink>
             </div>
-            <span style={{ fontWeight: "100", marginLeft: "1.2vw" }}>
-              {new Date(user.timeStamp).toISOString().split("T")[0]}
-            </span>
-            <DeleteIcon
+            {/* <DeleteIcon
               onClick={() => deleteHandler(user)}
               style={{ cursor: "pointer" }}
+            /> */}
+            <span style={{ fontWeight: "100",display:'flex'}}>
+              {/* {new Date(user.timeStamp).toISOString().split("T")[0]} */}
+              {new Date(user.timeStamp).toLocaleString() }
+              <DeleteIcon
+              onClick={() => deleteHandler(user)}
+              style={{marginRight:'5px',marginLeft:'15px', cursor: "pointer" }}
             />
+            </span>
           </ListItem>
         ))}
       </Paper>

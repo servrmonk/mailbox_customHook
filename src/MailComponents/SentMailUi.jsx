@@ -63,11 +63,7 @@ export default function SentMailUi() {
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div style={{ display: "flex" }}>
-              <img
-                style={{ width: "1.4vw", height: "1.4vw" }}
-                src="https://tse2.mm.bing.net/th?id=OIP.z1oe7RLr5Sv6yaCszUf7tQHaHa&pid=Api&P=0&h=180"
-                alt="star_image"
-              />
+              
               <NavLink
                 onClick={openSentInDetails}
                 to={`/sentMail/${user.id}`}
@@ -92,13 +88,13 @@ export default function SentMailUi() {
                 />
               </NavLink>
             </div>
-            <span style={{ marginLeft: "1.2vw", fontWeight: "100" }}>
-              {new Date(user.timeStamp).toISOString().split("T")[0]}
-            </span>
+            <span style={{ fontWeight: "100",display:'flex'}}>
+            {new Date(user.timeStamp).toLocaleString() }
             <DeleteIcon
               onClick={() => deleteHandler(user)}
-              style={{ cursor: "pointer" }}
+              style={{marginRight:'5px',marginLeft:'15px', cursor: "pointer" }}
             />
+            </span>
           </ListItem>
         ))}
       </Paper>
